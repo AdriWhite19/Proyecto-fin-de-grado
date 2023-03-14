@@ -18,11 +18,13 @@ $sql = "SELECT p.Identificador, p.Nombre, p.Categoria, p.Marca, p.Peso, p.Precio
 
     $ListaCompra = array();
 
+    $total = 0;
+
 
     while($obj = $result->fetch_object()){
         
         array_push($ListaCompra,$obj);
-
+        $total = $total+($obj -> Precio * $obj -> Cantidad_Productos);
     }
 
 require("cabecera.php");

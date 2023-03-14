@@ -19,7 +19,7 @@
 	<?php
 	require('cabecera.view.php');
 	?>
-	<h4><?= $mensaje ?></h4>
+	<h4 class="error"><?= $mensaje ?></h4>
 
 	<div class="contenedor-formulario">
 		<form action="" method="post" enctype="multipart/form-data" class="formulario">

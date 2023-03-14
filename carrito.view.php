@@ -82,7 +82,12 @@
 
 
     </div>
-    <a class=" btn btn-info" href="buscar.php">Volver</a>
+    <hr/>
+    <h2 class="text-center" >Total: <?= $total ?> €</h2>
+    <hr/>
+    <div class="text-center">
+    <a class="btn btn-info" href="buscar.php">Volver</a>
+    </div>
 </body>
 <script>
     function preguntaBorrar(Id) {

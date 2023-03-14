@@ -472,3 +472,10 @@ input[type="search"]:focus {
   gap: 20px;
 }
 
+.total{
+  text-align: center;
+}
+.error{
+  color: red;
+  background-color: #ccc;
+}
