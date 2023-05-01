@@ -1,12 +1,13 @@
 <?php
 session_start();
 
-if(!isset($_SESSION["Id"])){
+if (!isset($_SESSION["Id"])) {
     header("Location: login.php");
-     return;
- }
- 
+    return;
+}
+
 require("abrirConexion.php");
+require("Modelos/Usuario.php");
 
 $IdCliente = $_SESSION["Id"];
 
@@ -21,29 +22,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $DireccionU = $_POST["Direccion"];
     $Codigo_PostalU = $_POST["Codigo_Postal"];
 
+    $usuario = new Usuario($NombreU, $Apellido1U, $Apellido2U, $EmailU, $DireccionU, $Codigo_PostalU);
+    $res = $usuario->ActualizarUsuario($conexion, $IdCliente);
 
-    $sql = "UPDATE usuarios SET Nombre=?,Apellido1=?,Apellido2=?,Email=?,Direccion=?,Codigo_Postal=? WHERE Id=?";
-
-    if ($stmt = mysqli_prepare($conexion, $sql)) {
-
-        mysqli_stmt_bind_param($stmt, "sssssii", $NombreU, $Apellido1U, $Apellido2U, $EmailU, $DireccionU, $Codigo_PostalU, $IdCliente);
-
-        mysqli_stmt_send_long_data($stmt, 7, $data);
-        if (mysqli_stmt_execute($stmt)) {
-            $mensaje = "Se ha insertado correctamente.";
-            header("location: gestionDeUsuario.php");
-        } else {
-            $mensaje = "Algo salió mal, por favor vuelve a intentarlo.";
-        }
+    if ($res == "") {
+        header("location: gestionDeUsuario.php");
+    } else {
+        $mensaje = $res;
     }
+
 } else {
-
-    $sql = "SELECT Id, Nombre, Apellido1, Apellido2, Email, Direccion, Codigo_Postal FROM usuarios WHERE Id = " . $IdCliente;
-
-    $result = $conexion->query($sql);
-
-    $obj = $result->fetch_object();
-   
+    $obj = Usuario::ObtenerUsuario($conexion, $IdCliente);
 
     $Id = $obj->Id;
     $Nombre = $obj->Nombre;
