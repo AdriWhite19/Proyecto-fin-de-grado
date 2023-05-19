@@ -117,8 +117,9 @@ button:focus {
   align-items: center;
   gap: 10px;
   width: 100%;
-}
 
+  
+}
 
 .menu_icon {
   width: 30px;
@@ -207,7 +208,7 @@ button:focus {
 }
 
 .dropdown {
-  position: relative;
+ /* position: relative;*/
   display: inline-block;
 }
 
@@ -478,4 +479,36 @@ input[type="search"]:focus {
 .error{
   color: red;
   background-color: #ccc;
+}
+
+.eliminar-categoria{
+  background-color: #ff0000; /* Color de fondo */
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.editar-categoria {
+  background-color: #b78433;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.id-categoria{
+    max-width: 300px; /* Ancho máximo del input */
+    max-height: 40px; /* Alto máximo del input */
+    color: #000000; /* Color del texto */
+    /* Otros estilos que desees aplicar al input */
+}
+
+.descripcion-categoria{
+  max-width: 300px; /* Ancho máximo del input */
+  max-height: 40px; /* Alto máximo del input */
+  color: #000000; /* Color del texto */
+  /* Otros estilos que desees aplicar al input */
 }

@@ -1,6 +1,6 @@
 <?php
     require("abrirConexion.php");
-    require("Modelos/Carrito.php");
+    require("Modelos/Categoria.php");
 
     session_start();
 
@@ -12,14 +12,15 @@
     $Id = intval($_GET["Id"]);
     $IdCliente = $_SESSION["Id"];
                    
-    $res = Carrito::BorrarProducto($conexion, $IdCliente, $Id);
+    $res = Categoria::BorrarCategoria($conexion, $Id);
 
+   // echo "Este es el contenido de ".$res." L";
+   // var_dump($res);
     
-    if ($res="")
+    if ($res==="")
     {
-        
         // Si la consulta ha tenido éxito, redirigir al usuario a la página de inicio
-        header("Location: buscar.php");
+        header("Location: administrarCategorias.php");
     }
     else
     {

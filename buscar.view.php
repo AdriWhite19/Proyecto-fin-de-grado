@@ -22,7 +22,9 @@
     ?>
     <?php
     if ($esAdmin) {
-        echo '<a href="./nuevo.php" class="btn btn-success">Añadir producto</a>';
+        echo '<a href="./nuevo.php" class="btn btn-success">Añadir producto</a> &nbsp; &nbsp; &nbsp;';
+
+        echo '<a href="./administrarCategorias.php" class="btn btn-dark"> Editar categorías</a>'; 
     }
     ?>
     <div class="contenedor-productos">
