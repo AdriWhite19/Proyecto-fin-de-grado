@@ -19,13 +19,17 @@
 	<?php
 	require('cabecera.view.php');
 	?>
-	<h4 class="error"><?= $mensaje ?></h4>
+	<h4 class="error">
+		<?= $mensaje ?>
+	</h4>
 
 	<div class="contenedor-formulario">
 		<form action="" method="post" enctype="multipart/form-data" class="formulario">
 
-			<h1 class="titulo-formulario"><?= $Operacion ?></h1>
-			<input type="hidden" name="Id" value="<?= $Id ?>">
+			<h1 class="titulo-formulario">
+				<?= $Operacion ?>
+			</h1>
+			<input type="hidden" name="Identificador" value="<?= $Id ?>">
 			<div class="producto_administracion">
 				<label>Nombre Producto</label>
 				<input type="text" name="Nombre" id="Nombre" value="<?= $Nombre ?>" class="producto_input">
@@ -34,9 +38,14 @@
 			<div class="producto_administracion">
 				<label>Categoria Producto</label>
 				<select name="Categoria" class="producto_input">
-					<option value="3453">Alimentacion</option>
-					<option value="3454">Jaulas</option>
-					<option value="3455">Juguetes</option>
+					<?php
+					foreach ($categorias as &$categoria) {
+						?>
+						<option value='<?= $categoria["Id_Categoria"] ?>'><?= $categoria["Descripción"] ?></option>
+
+						<?php
+					}
+					?>
 				</select>
 			</div>
 
@@ -63,7 +72,7 @@
 			</div>
 
 			<div class="producto_administracion">
-				<input type="submit" class="btn btn-primary" value="Añadir">
+				<input type="submit" class="btn btn-primary" value="Guardar">
 				<input type="reset" class="btn btn-default" onclick="resetear()" value="Borrar">
 				<a href="buscar.php" class="btn btn-info">Volver</a>
 			</div>

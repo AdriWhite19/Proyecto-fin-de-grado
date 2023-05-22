@@ -7,6 +7,9 @@ if (!isset($_SESSION["Administrador"]) || $_SESSION["Administrador"] !== 1) {
 }
 
 require("abrirConexion.php");
+require("Modelos/Producto.php");
+require_once("Modelos/Categoria.php");
+
 $mensaje = "";
 $Operacion = "Editar producto";
 

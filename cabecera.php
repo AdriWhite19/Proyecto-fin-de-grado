@@ -5,6 +5,10 @@
         return;
     }
     
+    require_once("Modelos/Categoria.php");
+
+    $categorias = Categoria::ObtenerCategorias($conexion);
+
     $IdCliente = $_SESSION["Id"];
 
     $sql1 = "SELECT SUM(Cantidad_Productos) AS Cantidad_Total FROM carrito WHERE Id_Cliente =" . $IdCliente;

@@ -11,7 +11,12 @@ session_start();
         $productoBuscado = $_POST['texto'];
         $productos = Producto::MostrarProductos($conexion, $productoBuscado);
     } else {
-        $productos = Producto::MostrarProductos($conexion,"");
+        if (isset($_GET["Id_Categoria"])){
+            $categoria = $_GET["Id_Categoria"];
+            $productos = Producto::ObtenerProductosCategoria($conexion,$categoria);
+        } else{
+            $productos = Producto::MostrarProductos($conexion,"");
+        }
     }
 
     require("cabecera.php");

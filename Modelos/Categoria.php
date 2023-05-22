@@ -2,57 +2,60 @@
 
 class Categoria
 {
+    private int $Id;
     private string $Descripcion;
-    public function __construct(string $Descripcion)
+    public function __construct(int $Id,string $Descripcion)
     {
+        $this->Id = $Id;
+
         $this->Descripcion = $Descripcion;
+        
     }
 
 
     public static function AñadeCategoria($id_categoria, $descripcion, $conexion)
     {
-      
-            $sql = "INSERT INTO categorias (Id_Categoria, Descripcion) VALUES (?,?)";
-            if ($stmt = mysqli_prepare($conexion, $sql)) {
-                mysqli_stmt_bind_param(
-                    $stmt,"is",$id_categoria,$descripcion
-                );
 
-                if (mysqli_stmt_execute($stmt)) {
-                    return "";
-                } else {
-                    return "Algo salió mal, por favor vuelve a intentarlo.";
-                }
+        $sql = "INSERT INTO categorias (Id_Categoria, Descripción) VALUES (?,?)";
+        if ($stmt = mysqli_prepare($conexion, $sql)) {
+            mysqli_stmt_bind_param(
+                $stmt,
+                "is",
+                $id_categoria,
+                $descripcion
+            );
+
+            if (mysqli_stmt_execute($stmt)) {
+                return "";
+            } else {
+                return "Algo salió mal, por favor vuelve a intentarlo.";
             }
         }
+    }
 
-    /*
-    public function ActualizaCategoria($conexion, $Id)
+
+    public static function ActualizaCategoria($id, $descripcion, $conexion, $Id)
     {
-    $sql = "UPDATE Categorias SET Nombre=?,Categoria=?,Marca=?,Peso=?,Precio=?,Imagen=? WHERE Identificador=?";
-    if ($stmt = mysqli_prepare($conexion, $sql)) {
-    mysqli_stmt_bind_param(
-    $stmt,
-    "sissdbi",
-    $this->nombreProducto,
-    $this->categoria,
-    $this->marca,
-    $this->peso,
-    $this->precio,
-    $this->imagen,
-    $Id
-    );
-    $data = $this->imagen;
-    mysqli_stmt_send_long_data($stmt, 5, $data);
-    if (mysqli_stmt_execute($stmt)) {
-    return "";
-    } else {
-    return "Algo salió mal, por favor vuelve a intentarlo.";
+
+        $mensaje = "";
+
+        $sql = "UPDATE categorias SET Id_Categoria=?, Descripción=? WHERE Id_Categoria=?";
+        if ($stmt = mysqli_prepare($conexion, $sql)) {
+            mysqli_stmt_bind_param(
+                $stmt,
+                "isi",
+                $id,
+                $descripcion,
+                $Id
+            );
+
+            if (!mysqli_stmt_execute($stmt)) {
+                $mensaje = "Algo salió mal, por favor vuelve a intentarlo.";
+            } 
+        }
+        return  $mensaje;
     }
-    }
-    } 
-    }
-    */
+
     public static function ObtenerCategorias($conexion, $id = false)
     {
 
@@ -71,7 +74,7 @@ class Categoria
             return $categorias;
 
         } else {
-            $sql = "SELECT Id_Categoria, Descripción FROM categorias";
+            $sql = "SELECT Id_Categoria, Descripción FROM categorias ORDER BY Descripción";
             $result = $conexion->query($sql);
             $categorias = array();
 

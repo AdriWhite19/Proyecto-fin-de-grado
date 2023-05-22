@@ -27,12 +27,20 @@
 			<h1 class="titulo-formulario"><?= $Operacion ?></h1>
 			<div class="producto_administracion">
 				<label>Id Categoria</label>
+				<?php if ($Operacion === "Editar Categoria"){ ?>	
 				<input type="number" name="Id" class="id-categoria" id="Id" value="<?= $id ?>">
+				<?php } else {?>	
+				<input type="number" name="Id" class="id-categoria" id="Id">
+				<?php }?>	
 			</div>
 
 			<div class="producto_administracion">
 				<label>Descripción</label>
-				<input type="text" name="Descripcion" class="descripcion-categoria" id="Descripcion" value="<?= $descripcion ?>" class="producto_input">
+				<?php if ($Operacion === "Editar Categoria"){ ?>	
+					<input type="text" name="Descripcion" class="descripcion-categoria" id="Descripcion" value="<?= $descripcion ?>" class="producto_input">
+				<?php } else {?>	
+					<input type="text" name="Descripcion" class="descripcion-categoria" id="Descripcion" class="producto_input">
+				<?php }?>	
 			</div>
 
 			<div class="producto_administracion">

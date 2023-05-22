@@ -18,6 +18,7 @@ class Producto
     {
         $this->nombreProducto = $nombreProducto;
         $this->categoria = $categoria;
+        $this->marca = $marca;
         $this->precio = $precio;
         $this->peso = $peso;
         $this->precio = $precio;

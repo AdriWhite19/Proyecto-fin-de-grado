@@ -512,3 +512,12 @@ input[type="search"]:focus {
   color: #000000; /* Color del texto */
   /* Otros estilos que desees aplicar al input */
 }
+
+
+.aniadir-categoria{
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}

@@ -18,9 +18,11 @@
     if (isset($_SESSION["Administrador"]) && $_SESSION["Administrador"] == 1) {
         $esAdmin = true;
     }
+
+    echo '<a href="./añadirCategoria.php" class="btn btn-success ">Añadir Categoria</a> </br>';
     ?>
     <div class="carrito-contenedor-productos">
-
+   
         <?php
         foreach ($categorias as &$categoria) {
             ?>
@@ -58,7 +60,7 @@
 </body>
 <script>
     function preguntaBorrar(Id) {
-        if (confirm("Estas seguro de borrar este producto !!")) {
+        if (confirm("Estas seguro de borrar esta categoria !!")) {
             window.location.assign("borrarCategoria.php?Id=" + Id);
         }
     }

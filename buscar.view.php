@@ -30,6 +30,7 @@
     <div class="contenedor-productos">
 
         <?php
+        if(count($productos) > 0){
         foreach ($productos as &$producto) {
             ?>
             <div class='producto'>
@@ -74,7 +75,9 @@
             </div>
             <?php
         }
-
+    } else {
+        echo "No hay productos en esta categoría";
+    }
         ?>
 
     </div>
