@@ -1,13 +1,15 @@
 <?php
     
+    require_once("Modelos/Categoria.php");
+
+    $categorias = Categoria::ObtenerCategorias($conexion);
+    
+    
     if(!isset($_SESSION["Id"])){
         $carrito_Cantidad = 0;
         return;
     }
     
-    require_once("Modelos/Categoria.php");
-
-    $categorias = Categoria::ObtenerCategorias($conexion);
 
     $IdCliente = $_SESSION["Id"];
 
@@ -25,6 +27,7 @@
     unset($obj);
 
     unset($sql1);
+
 
 
 ?>

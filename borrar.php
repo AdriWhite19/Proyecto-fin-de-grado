@@ -14,7 +14,13 @@ require("Modelos/Producto.php");
 $Id = $_GET['Id'];
 
     $res = Producto::BorrarProducto($conexion, $Id);
-    if ($res="")
+    
+    
+    
+    
+    
+    
+    if (!$res="")
     {
         header("Location: buscar.php");
     }

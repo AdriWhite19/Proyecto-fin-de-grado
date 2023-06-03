@@ -83,10 +83,26 @@
 
     </div>
     <hr/>
-    <h2 class="text-center" >Total: <?= $total ?> €</h2>
+    
+
+    <?php if (count($ListaCompra) == 0) { 
+    
+        echo "<center><h4> No hay productos en el carrito </h4></center>";
+
+     } else { ?> 
+        <h2 class="text-center" >Total: <?= $total ?> €</h2>
+    <?php } ?>
+
     <hr/>
     <div class="text-center">
     <a class="btn btn-info" href="buscar.php">Volver</a>
+
+    <?php if (!count($ListaCompra) == 0) { ?>
+    
+    <a class="btn btn-danger" href="tramiteDeLaCompra.php?$total">Pagar: <?= $total ?> €</a>
+
+    <?php }?>
+
     </div>
 </body>
 <script>

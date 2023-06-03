@@ -14,12 +14,15 @@
                    
     $res = Carrito::BorrarProducto($conexion, $IdCliente, $Id);
 
+   
     
-    if ($res="")
+    if (!$res="")
     {
         
         // Si la consulta ha tenido éxito, redirigir al usuario a la página de inicio
-        header("Location: buscar.php");
+        
+         header("Location: carrito.php");
+        
     }
     else
     {

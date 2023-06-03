@@ -1,6 +1,6 @@
 <?php
 // Include config file
-require_once "abrirConexion.php";
+require("abrirConexion.php");
 require("Modelos/Usuario.php");
 
 // Define variables and initialize with empty values

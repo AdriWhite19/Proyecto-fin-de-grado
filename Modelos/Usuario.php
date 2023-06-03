@@ -53,20 +53,24 @@ class Usuario
 
     public function AltaUsuario($conexion, $pwd)
     {
-        $sql = "INSERT INTO usuarios (Nombre, Apellido1, Apellido2, Email, Direccion, Codigo_Postal, Contraseña) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO usuarios (Id, Nombre, Apellido1, Apellido2, Email, Direccion, Codigo_Postal, Contraseña, Administrador) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $resultado = false;
         if ($stmt = mysqli_prepare($conexion, $sql)) {
-            mysqli_stmt_bind_param($stmt, "sssssss", $param_Nombre, $param_Apellido1, $param_Apellido2, $param_Email, $param_direccion, $param_codigo_postal, $param_Contraseña);
+            mysqli_stmt_bind_param($stmt, "isssssssi",$param_Id, $param_Nombre, $param_Apellido1, $param_Apellido2, $param_Email, $param_direccion, $param_codigo_postal, $param_Contraseña, $param_admin);
 
             // Set parameters
-
-            $param_Contraseña = password_hash($pwd, PASSWORD_DEFAULT); // Creates a Contraseña hash
-
+            
+            $param_Id = "";
             $param_Nombre = $this->nombre;
             $param_Apellido1 = $this->apellido1;
             $param_Apellido2 = $this->apellido2;
+            $param_Email = $this->email;
             $param_direccion = $this->direccion;
             $param_codigo_postal = $this->codigoPostal;
+            $param_Contraseña = $pwd;
+            $param_admin = 0;
+            
+            
 
             if (mysqli_stmt_execute($stmt)) {
                 $resultado = true;
