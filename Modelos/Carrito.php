@@ -14,6 +14,20 @@ class Carrito
         }
     }
 
+    public static function VaciarCarrito($conexion, $usuario)
+    {
+
+        $sql = "DELETE FROM carrito WHERE Id_Cliente = " . $usuario;
+
+        if (mysqli_query($conexion, $sql)) {
+            return ""; // Borrado
+        } else {
+            return "Error al vaciar el carrito: " . mysqli_error($conexion);
+        }
+    }
+
+
+
     public static function ObtenerCarrito($conexion, $cliente)
     {
         $sql = "SELECT p.Identificador, p.Nombre, p.Categoria, p.Marca, p.Peso, p.Precio, p.Imagen, c.Cantidad_Productos FROM carrito c INNER JOIN productos p ON c.Id_Productos = p.Identificador WHERE c.Id_Cliente = " . $cliente;

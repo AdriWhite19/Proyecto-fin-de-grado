@@ -17,7 +17,7 @@
         
         
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-        <h2>Login OnlyParrots</h2>
+        <h2>Login - Akari Design</h2>
         <p>Por favor, complete sus credenciales para iniciar sesión.</p>
             <div class="form-group <?php echo (!empty($Email_err)) ? 'has-error' : ''; ?>">
                 <label>Email</label>

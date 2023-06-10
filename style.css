@@ -2,6 +2,8 @@ html{
   font-size: 12px;
 }
 
+
+
 .body-index {
     position: absolute;
     height: 100vh;
@@ -110,13 +112,15 @@ button:focus {
 
 
 .cabecera {
-  background-color: rgb(251, 249, 249);
+   background-color: #f6e6d1;
   font-family: Arial;
   font-size: 10px;
   display: flex;
   align-items: center;
   gap: 10px;
   width: 100%;
+  height: 100px;
+
 
   
 }
@@ -146,6 +150,7 @@ button:focus {
 .menu_icon:hover::after {
   width: 20px;
   margin-left: 2px;
+
 }
 
 .Menu {
@@ -205,12 +210,15 @@ button:focus {
 .dropbtn:hover, .dropbtn:focus {
   /*background-color: #2980B9;*/
   border:none;
+
 }
 
 .dropdown {
  /* position: relative;*/
   display: inline-block;
 }
+
+
 
 .dropdown-content {
   display: none;
@@ -294,6 +302,8 @@ input[type="search"]:focus {
     margin-left: auto;
     margin-right: auto;
     justify-content:center;
+    padding-bottom: 100px;
+    padding-top: 100px;
 }
 
 .producto{
@@ -327,6 +337,7 @@ input[type="search"]:focus {
   text-align: center;
   font-size: 30px;
   font-weight: 800;
+  margin-bottom: 8px;
 }
 
 .aniadir{
@@ -542,3 +553,315 @@ input[type="submit"] {
     cursor: pointer;
 }
 
+          .slide {
+                position: relative;
+                box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.64);
+               
+
+
+            }
+            .slide-inner {
+                position: relative;
+                overflow: hidden;
+                width: 100%;
+                height: calc( 300px + 3em);
+                height: auto;
+
+            }
+            .slide-open:checked + .slide-item {
+                position: static;
+                opacity: 100;
+            }
+            .slide-item {
+                position: absolute;
+                opacity: 0;
+                -webkit-transition: opacity 0.6s ease-out;
+                transition: opacity 0.6s ease-out;
+                
+                
+            }
+            .slide-item img {
+              display: block;
+              margin: 0 auto;
+              max-width: 100%;
+              height: auto;
+             
+            }
+            .slide-control {
+                background: rgba(0, 0, 0, 0.28);
+                border-radius: 50%;
+                color: #fff;
+                cursor: pointer;
+                display: none;
+                font-size: 40px;
+                height: 40px;
+                line-height: 35px;
+                position: absolute;
+                top: 50%;
+                -webkit-transform: translate(0, -50%);
+                cursor: pointer;
+                -ms-transform: translate(0, -50%);
+                transform: translate(0, -50%);
+                text-align: center;
+                width: 40px;
+                z-index: 10;
+            }
+            .slide-control.prev {
+                left: 2%;
+            }
+            .slide-control.next {
+                right: 2%;
+            }
+            .slide-control:hover {
+                background: rgba(0, 0, 0, 0.8);
+                color: #aaaaaa;
+            }
+            #slide-1:checked ~ .control-1,
+            #slide-2:checked ~ .control-2,
+            #slide-3:checked ~ .control-3 {
+                display: block;
+            }
+            .slide-indicador {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                position: absolute;
+                bottom: 2%;
+                left: 0;
+                right: 0;
+                text-align: center;
+                z-index: 10;
+            }
+            .slide-indicador li {
+                display: inline-block;
+                margin: 0 5px;
+            }
+            .slide-circulo {
+                color: #828282;
+                cursor: pointer;
+                display: block;
+                font-size: 35px;
+            }
+            .slide-circulo:hover {
+                color: #aaaaaa;
+            }
+            #slide-1:checked ~ .control-1 ~ .slide-indicador 
+                 li:nth-child(1) .slide-circulo,
+            #slide-2:checked ~ .control-2 ~ .slide-indicador 
+                  li:nth-child(2) .slide-circulo,
+            #slide-3:checked ~ .control-3 ~ .slide-indicador 
+                  li:nth-child(3) .slide-circulo {
+                color: #428bca;
+            }
+            #titulo {
+                width: 100%;
+                position: absolute;
+                padding: 0px;
+                margin: 0px auto;
+                text-align: center;
+                font-size: 27px;
+                color: rgba(255, 255, 255, 1);
+                font-family: 'Open Sans', sans-serif;
+                z-index: 9999;
+                text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.33), 
+                     -1px 0px 2px rgba(255, 255, 255, 0);
+            }
+
+.bg-1{
+
+   text-align: center;
+
+   padding-top: 150px;
+   padding-bottom: 50px;
+
+}
+
+.t-stroke {
+
+  color: transparent;
+
+  -moz-text-stroke-width: 2px;
+
+  -webkit-text-stroke-width: 2px;
+
+  -moz-text-stroke-color: #000000;
+
+  -webkit-text-stroke-color: black;
+
+  font-size: 100px;
+}
+
+.t-shadow {
+
+  text-shadow: 7px 7px #f6e6d1;
+
+}
+
+
+footer {
+
+  background-color: #f6e6d1;
+  color: #2E2E2E;
+  padding: 20px;
+  text-align: center;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+footer ul {
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer li {
+  margin-right: 20px;
+}
+
+footer li:last-child {
+  margin-right: 0;
+}
+
+footer a {
+  color: #2E2E2E;
+  text-decoration: none;
+}
+
+
+  nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    
+    nav li {
+      margin-right: 20px;
+    }
+    
+    nav li:last-child {
+      margin-right: 0;
+    }
+    
+    nav a {
+      display: inline-block;
+      padding: 8px 16px;
+      background-color: white;
+      color: #2E2E2E;
+      text-decoration: none;
+      border-radius: 5px;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+      font-size: 25px;
+      font-family: 'Nunito', sans-serif;
+    }
+    
+    nav a:hover {
+      background-color: #e2e2e2;
+    }
+
+     h1{
+         font-size: 50px;
+      font-family: 'Nunito', sans-serif;
+    }
+
+   
+
+.logo img {
+  width: 200px; /* ajusta el tamaño del logo según tus necesidades */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  padding-top: 50px;
+  
+}
+.volver{
+ display: block;
+  margin: 0 auto;
+  text-align: center;
+      padding: 8px 16px;
+      background-color: white;
+      color: #2E2E2E;
+      text-decoration: none;
+      border-radius: 5px;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+      font-size: 25px;
+      font-family: 'Nunito', sans-serif;
+      padding-bottom: 100px;
+      padding-top: 50px;
+
+}
+
+.botones{
+     display: inline-block;
+      padding: 8px 16px;
+      background-color: white;
+      color: #2E2E2E;
+      text-decoration: none;
+      border-radius: 5px;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+      font-size: 25px;
+      font-family: 'Nunito', sans-serif;
+}
+
+.boton_carrito img
+{
+
+    width: 100%;
+    height: 50px;
+     display: inline-block;
+      padding: 8px 16px;
+      background-color: white;
+      color: #2E2E2E;
+      text-decoration: none;
+      border-radius: 5px;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+      font-size: 25px;
+      font-family: 'Nunito', sans-serif;
+}
+
+
+
+.buscador {
+   background-color: #f6e6d1;
+  font-family: Arial;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  height: 100px;
+  margin-bottom: 100px;
+
+  
+}
+
+.titulobuscador{
+ margin-left:300px;
+}
+
+.botonAgregar{
+ background-color:#f6e6d1;
+ border-radius: 4px;
+ border: 1px solid black;
+ padding: 5px 10px;
+ color: black;
+}
+
+
+.pedido-correcto{
+    margin-top:100px;
+    text-align: center;
+}
+
+a:hover{
+    text-decoration: none;
+    background-color: #66FF99;
+    
+}

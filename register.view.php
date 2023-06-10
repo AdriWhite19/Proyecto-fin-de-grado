@@ -27,7 +27,7 @@
 <div class="body-index"></div>
 	<div class="register-container">
 		<h2>Registro</h2>
-		<p>Por favor complete este formulario para crear una cuenta.</p>
+		<p class="textos">Por favor complete este formulario para crear una cuenta.</p>
 		<form action="<?= htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
 			<div class="form-group <?php echo (!empty($Nombre_err)) ? 'has-error' : ''; ?>">
 				<label>Usuario</label>

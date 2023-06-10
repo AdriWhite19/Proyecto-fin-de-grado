@@ -24,17 +24,17 @@
         </form>
     </div>
 
-    <div class="Title">ONLYPARROTS</div>
+    <div class="Title">AKARI DESIGN</div>
 
     <?php
     if (!isset($_SESSION["loggedin"])) {
         ?>
         <div class="registro">
-            <button class="Registrase" onclick="window.location='register.php'" value="Registrarse">REGISTRARSE</button>
+            <button class="botones" onclick="window.location='register.php'" value="Registrarse">❀ Registro de usuario</button>
         </div>
 
         <div>
-            <button class="Login" onclick="window.location='login.php'" value="Login">LOGIN</button>
+            <button class="botones" onclick="window.location='login.php'" value="Login">❀ Inicio de sesión</button>
         </div>
         <?php
     } else {
@@ -42,8 +42,8 @@
         <h3>
             <?php echo htmlspecialchars($_SESSION["Email"]); ?>
         </h3>
-        <a href="gestionDeUsuario.php" class="btn btn-info">Gestionar Cuenta</a>
-        <a href="carrito.php" class="btn btn-primary">
+        <a href="gestionDeUsuario.php" class="botones">❀ Gestionar Cuenta</a>
+        <a href="carrito.php" class="boton_carrito">
             <?php
             if ($carrito_Cantidad > 0) {
                 ?>
@@ -53,17 +53,13 @@
                 <?php
             }
             ?>
-            <span style="font-size:11px">&#128722;</span>
+           <img src="img/carrito.png">
         </a>
-        <a href="reset-password.php" class="btn btn-warning">Cambia tu contraseña</a>
-        <a href="cerrarConexion.php" class="btn btn-danger mr-5">Cierra la sesión</a>
+        <a href="reset-password.php" class="botones">❀ Cambia tu contraseña</a>
+        <a href="cerrarConexion.php" class="botones">❀ Cierra la sesión</a>
         <?php
     }
     ?>
-
-
-
-
 
 
 </div>

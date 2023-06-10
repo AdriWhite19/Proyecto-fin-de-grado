@@ -63,7 +63,6 @@
         return;
     }
 
-    // Continuar con el envío del formulario
 });
 
     </script>
